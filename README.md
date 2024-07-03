@@ -50,11 +50,3 @@ Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを�
  ```shell
    $ rosrun open_manipulator_moveit open_manipulator.py
  ```
- 
-# なぜうまくmoveit_comannderが動かないのか？
- open_manipulator_controller.launchを見てもらえばわかるが、既存のmikata-armのパッケージには、なぜが ns="mikata-arm"がgazeboやMoveit!を立ち上げるファイルに書かれている.
- namespaceが入ってしまうと、トピック名やサービス名全部が変わってしまい、joint_state_controllerやrobot_state_publisherの部分でうまくトピックを受け取ることができなくなり、
- tfを発行できなくなることにより、Rvizと実機のロボットが対応していないことになっている.
- 
- 例: 既存のパッケージを用いると、/joint_statesのトピック名の部分が、/mikata-arm/joint_statesとなっている. こうなってしまうと,robot_state_publisherでは,subscriberでは/joint_states
- というトピック名なので、受け取ることができない→したがって、namespaceをいらないところは消す必要があった.
