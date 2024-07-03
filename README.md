@@ -20,12 +20,12 @@ Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを�
 
 ```shell
     $ cd ~/catkin_ws/src
-    $ git clone https://github.com/Ryusei-Tomikawa/DYNAMIXEL-MikataArm-
+    $ git clone https://github.com/ｒｓｄlab/DYNAMIXEL-MikataArm-
     $ cd ..
     $ catkin build
 ```
  
-これで一応環境開発は整うはず
+これで環境構築は完了する．
 
 # 動作方法
 
